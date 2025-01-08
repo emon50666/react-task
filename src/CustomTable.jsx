@@ -147,7 +147,7 @@ const CustomTable = () => {
             value={rowsPerPage}
             type='number'
             onChange={handleRowsPerPageChange}
-            className="bg-gray-900 outline-none text-sm items-center mt-2 rounded px-3 py-0.5 "
+            className="bg-gray-900 outline-none text-sm items-center  rounded px-2 py-0.5 "
             
           > 
           
