@@ -1,8 +1,64 @@
-# React + Vite
+# React Task App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![T-shirt Maker Logo App](https://voluble-pony-9016ba.netlify.app/)
 
-Currently, two official plugins are available:
+This is a t-shirt design app that allows you to design t-shirts using any type of logo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+## Getting Started
+
+Follow these steps to set up and use the React  App on your local machine.
+
+1. Clone the repository:
+   ```bash
+   https://github.com/emon50666/react-task
+   ```
+
+2. Navigate to the project folder:
+   ```bash
+   cd folder: react-task
+   cd root folder: task
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+   or if you are using yarn:
+   ```bash
+   yarn install
+   ```
+
+### Running the App
+
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+2. Open your browser and go to:
+   ```
+   [http://localhost:5173/]
+   ```
+
+---
+
+
+## Folder Structure
+
+- **task** (Main folder)
+  - **react-task** (React app folder)
+   -** src **
+    -** CustomTable.jsx **
+    -** TshirtDesign.jsx **
+---
+
+
+
+## Contact
+
+For any inquiries or feedback, please reach out to [your-email@example.com](mailto:your-email@example.com).
+
+---
+
+### Happy Tasking!
