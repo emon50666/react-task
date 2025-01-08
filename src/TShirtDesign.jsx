@@ -61,8 +61,8 @@ const TShirtDesign = () => {
   });
 
   return (
-    <div className="p-4 max-w-full">
-      <h1 className="text-xl font-bold mb-4 text-center">T-Shirt Designer</h1>
+    <div className="p-4 max-w-full bg-[#fbf9f9] rounded-md">
+      <h1 className="text-xl font-bold mb-4 text-center">T-Shirt Design</h1>
 
       {/* First Image Dropzone */}
       <div className="flex flex-col gap-4 sm:flex-row mb-4">
@@ -146,7 +146,7 @@ const TShirtDesign = () => {
       <div className="mt-4 text-center">
         <button
           onClick={downloadImage}
-          className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
+          className="bg-black text-white px-6 py-2 rounded hover:bg-black/90"
         >
           Download Final Image
         </button>
