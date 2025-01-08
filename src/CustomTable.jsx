@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { LuArrowUpDown } from "react-icons/lu";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 const CustomTable = () => {
   const [data, setData] = useState([]); // Table data
@@ -49,44 +51,91 @@ const CustomTable = () => {
           placeholder="Search area"
           value={searchQuery}
           onChange={handleSearchChange}
-          className="border border-gray-300 p-2 rounded w-full"
+          className="border border-gray-300 p-2 rounded w-64 "
         />
       </div>
 
       {/* Table */}
-      <table className="min-w-full bg-gray-800 text-white">
+      <table className="min-w-full  bg-black text-white">
         <thead>
           <tr>
-            <th className="border px-4 py-2">First Name</th>
-            <th className="border px-4 py-2">Last Name</th>
-            <th className="border px-4 py-2">Address</th>
-            <th className="border px-4 py-2">State</th>
-            <th className="border px-4 py-2">Phone Number</th>
+            <th className="border border-gray-600 px-4 py-2 text-center">
+            <input
+                    type="checkbox"
+                    className="appearance-none h-4 w-4 bg-[#1E1F22] border border-gray-600 checked:bg-green-500 checked:border-white rounded focus:outline-none"
+                  />
+            </th>
+            <th className="border border-gray-600 text-gray-400 text-start px-4 py-2">
+              <div className="flex items-center gap-1">
+                First Name
+                <LuArrowUpDown />
+                <BsThreeDotsVertical />
+              </div>
+            </th>
+            <th className="border border-gray-600 text-gray-400 text-start px-4 py-2">
+              <div className="flex items-center gap-1">
+                Last Name
+                <LuArrowUpDown />
+                <BsThreeDotsVertical />
+              </div>
+            </th>
+            <th className="border border-gray-600 text-gray-400 text-start px-4 py-2">
+              <div className="flex items-center gap-1">
+                Address
+                <LuArrowUpDown />
+                <BsThreeDotsVertical />
+              </div>
+            </th>
+            <th className="border border-gray-600 text-gray-400 text-start px-4 py-2">
+              <div className="flex items-center gap-1">
+                State
+                <LuArrowUpDown />
+                <BsThreeDotsVertical />
+              </div>
+            </th>
+            <th className="border border-gray-600 text-gray-400 text-start px-4 py-2">
+              <div className="flex items-center gap-1">
+                Phone Number
+                <LuArrowUpDown />
+                <BsThreeDotsVertical />
+              </div>
+            </th>
           </tr>
+
         </thead>
         <tbody>
           {data.length > 0 ? (
             data.map((item, index) => (
-              <tr key={index}>
-                <td className="border px-4 py-2">{item.name}</td>
-                <td className="border px-4 py-2">{item.last_name}</td>
-                <td className="border px-4 py-2">{item.email}</td>
-                <td className="border px-4 py-2">{item.state}</td>
-                <td className="border px-4 py-2">{item.phone_number}</td>
+              <tr key={index} className="bg-[#1E1F22]">
+                {/* Checkbox column */}
+                <td className="border  border-gray-600 px-4 py-2 text-center">
+                  <input
+                    type="checkbox"
+                    className="appearance-none h-4 w-4 bg-[#1E1F22] border border-gray-600 checked:bg-green-500 checked:border-white rounded focus:outline-none"
+                  />
+
+
+                </td>
+                <td className="border border-gray-600 px-4 text-gray-400 py-2">{item.name}</td>
+                <td className="border border-gray-600 px-4 text-gray-400 py-2">{item.last_name}</td>
+                <td className="border border-gray-600 px-4 text-gray-400 py-2">{item.email}</td>
+                <td className="border border-gray-600 px-4 text-gray-400 py-2">{item.state}</td>
+                <td className="border border-gray-600 px-4 text-gray-400 py-2">{item.phone_number}</td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="5" className="border px-4 py-2 text-center">
+              <td colSpan="6" className="border px-4 py-2 text-center">
                 No data available.
               </td>
             </tr>
           )}
         </tbody>
+
       </table>
 
       {/* Pagination */}
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-end items-center mt-4">
         <button
           className="px-4 py-2 bg-gray-700 text-white rounded"
           onClick={() => handlePageChange(currentPage - 1)}
