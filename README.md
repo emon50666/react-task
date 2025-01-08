@@ -54,11 +54,3 @@ Follow these steps to set up and use the React  App on your local machine.
 ---
 
 
-
-## Contact
-
-For any inquiries or feedback, please reach out to [your-email@example.com](mailto:your-email@example.com).
-
----
-
-### Happy Tasking!
