@@ -1,20 +1,20 @@
-import React, { useState, useRef } from "react";
+import  { useState, useRef } from "react";
 import { Rnd } from "react-rnd";
 import { useDropzone } from "react-dropzone";
 import html2canvas from "html2canvas";
 
-const TShirtDesigner = () => {
-  const [firstImage, setFirstImage] = useState(null); // State for the first image (T-shirt background)
-  const [secondImage, setSecondImage] = useState(null); // State for the second image (Logo)
-  const [secondImagePosition, setSecondImagePosition] = useState({ x: 100, y: 100 }); // Position for the logo
-  const [secondImageSize, setSecondImageSize] = useState({ width: 100, height: 100 }); // Size for the logo
-  const tShirtRef = useRef(); // Ref for capturing the final image
+const TShirtDesign = () => {
+  const [firstImage, setFirstImage] = useState(null); 
+  const [secondImage, setSecondImage] = useState(null); 
+  const [secondImagePosition, setSecondImagePosition] = useState({ x: 100, y: 100 }); 
+  const [secondImageSize, setSecondImageSize] = useState({ width: 100, height: 100 }); 
+  const tShirtRef = useRef(); 
 
   // Handle the first image (T-shirt background) upload
   const handleFirstImageUpload = (file) => {
     const reader = new FileReader();
     reader.onload = () => {
-      setFirstImage(reader.result); // Set the first image as base64
+      setFirstImage(reader.result); 
     };
     reader.readAsDataURL(file);
   };
@@ -23,7 +23,7 @@ const TShirtDesigner = () => {
   const handleSecondImageUpload = (file) => {
     const reader = new FileReader();
     reader.onload = () => {
-      setSecondImage(reader.result); // Set the second image as base64 (logo)
+      setSecondImage(reader.result); 
     };
     reader.readAsDataURL(file);
   };
@@ -32,10 +32,10 @@ const TShirtDesigner = () => {
   const downloadImage = async () => {
     if (!tShirtRef.current) return;
     const canvas = await html2canvas(tShirtRef.current, {
-      useCORS: true, // Handle cross-origin images
+      useCORS: true, 
     });
     const link = document.createElement("a");
-    link.download = "final_tshirt_design.png";
+    link.download = "T-Shirt.png";
     link.href = canvas.toDataURL();
     link.click();
   };
@@ -66,9 +66,9 @@ const TShirtDesigner = () => {
 
       {/* First Image Dropzone */}
       <div className="flex flex-col gap-4 sm:flex-row mb-4">
-        <div className="w-full sm:w-1/2 p-4 border-2 border-gray-300" {...getTShirtRootProps()}>
+        <div className="w-full sm:w-1/2 p-4 border-2 border-gray-200 cursor-pointer rounded-md" {...getTShirtRootProps()}>
           <input {...getTShirtInputProps()} />
-          <p className="text-center">Drag & drop a T-shirt image here (First Image)</p>
+          <p className="text-center">Predefined  T-Shirt Image</p>
           {firstImage && (
             <img
               src={firstImage}
@@ -79,9 +79,9 @@ const TShirtDesigner = () => {
         </div>
 
         {/* Second Image Dropzone */}
-        <div className="w-full sm:w-1/2 p-4 border-2 border-gray-300" {...getLogoRootProps()}>
+        <div className="w-full sm:w-1/2 p-4 border-2 border-gray-200 cursor-pointer rounded-md" {...getLogoRootProps()}>
           <input {...getLogoInputProps()} />
-          <p className="text-center">Drag & drop a logo image here (Second Image)</p>
+          <p className="text-center">Upload Logo</p>
           {secondImage && (
             <img
               src={secondImage}
@@ -94,19 +94,19 @@ const TShirtDesigner = () => {
 
       {/* T-Shirt Preview */}
       <div
-        className="relative bg-gray-100 border-2 border-gray-300"
+        className="relative bg-gray-100 border-2 border-dashed rounded-md border-gray-200"
         style={{
           width: "100%",
-          height: "300px", // Adjust height to be mobile friendly
-          maxWidth: "400px", // Limit max width for large screens
+          height: "300px", 
+          maxWidth: "400px", 
           margin: "auto",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
-        ref={tShirtRef} // Reference for final image capture
+        ref={tShirtRef} 
       >
-        {/* First Image (T-shirt background) */}
+        
         {firstImage && (
           <img
             src={firstImage}
@@ -131,7 +131,7 @@ const TShirtDesigner = () => {
               setSecondImagePosition(position);
             }}
             bounds="parent"
-            lockAspectRatio={true} // Maintain aspect ratio
+            lockAspectRatio={true} 
           >
             <img
               src={secondImage}
@@ -146,7 +146,7 @@ const TShirtDesigner = () => {
       <div className="mt-4 text-center">
         <button
           onClick={downloadImage}
-          className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-700"
+          className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
         >
           Download Final Image
         </button>
@@ -155,4 +155,4 @@ const TShirtDesigner = () => {
   );
 };
 
-export default TShirtDesigner;
+export default TShirtDesign;

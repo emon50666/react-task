@@ -1,5 +1,6 @@
 import CustomTable from "./CustomTable";
-import TShirtDesigne from "./TShirtDesigne";
+import TShirtDesign from "./TShirtDesign";
+
 
 
 
@@ -16,10 +17,9 @@ const App = () => {
         <CustomTable />
       </section>
 
-      {/* T-Shirt Logo Designer */}
+      {/* T-Shirt Logo Designe */}
       <section>
-        <h2 className="text-xl font-semibold mb-3">T-Shirt Logo Designer</h2>
-        <TShirtDesigne />
+        <TShirtDesign />
       </section>
     </div>
   );
