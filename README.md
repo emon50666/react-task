@@ -1,6 +1,6 @@
-# React Task App
 
-![T-shirt Maker Logo App](https://voluble-pony-9016ba.netlify.app/)
+
+[live link](https://voluble-pony-9016ba.netlify.app/)
 
 This is a t-shirt design app that allows you to design t-shirts using any type of logo.
 
